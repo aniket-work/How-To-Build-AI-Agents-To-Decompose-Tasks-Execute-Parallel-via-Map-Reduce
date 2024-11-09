@@ -1,0 +1,149 @@
+PROMPTS = {
+    "step1": {
+        "template": """Act as a strategic solutions architect to generate four comprehensive solutions for the following problem:
+
+Problem Statement: {input}
+
+Key Considerations to Address:
+{considerations}
+
+Requirements for Each Solution:
+1. Technical Feasibility
+2. Resource Requirements
+3. Implementation Timeline
+4. Risk Assessment
+5. Success Metrics
+
+Please provide four detailed solutions in the following JSON format:
+{
+    "solutions": [
+        {
+            "title": "Solution name",
+            "description": "Detailed explanation",
+            "implementation": "Key steps",
+            "risks": "Potential challenges",
+            "metrics": "Success indicators"
+        }
+        // ... repeat for all solutions
+    ]
+}
+
+Ensure each solution is innovative, practical, and addresses all key considerations.""",
+        "variables": ["input", "considerations"]
+    },
+
+    "step2": {
+        "template": """Conduct a thorough evaluation of the proposed solution:
+
+Solution Details: {solutions}
+
+Please analyze this solution across the following dimensions:
+1. Technical Viability
+   - Architecture soundness
+   - Scalability potential
+   - Technology stack compatibility
+
+2. Business Impact
+   - Cost-benefit analysis
+   - ROI potential
+   - Market advantage
+
+3. Implementation Complexity
+   - Resource requirements
+   - Timeline feasibility
+   - Technical dependencies
+
+4. Risk Assessment
+   - Technical risks
+   - Business risks
+   - Mitigation strategies
+
+Please provide your comprehensive evaluation in the following JSON format:
+{
+    "review": {
+        "technical_assessment": "Detailed technical analysis",
+        "business_impact": "Business considerations",
+        "implementation_analysis": "Implementation details",
+        "risk_evaluation": "Risk analysis",
+        "overall_recommendation": "Final recommendation"
+    }
+}""",
+        "variables": ["solutions"]
+    },
+
+    "step3": {
+        "template": """Perform a deep-dive analysis of the previous evaluation:
+
+Evaluation Details: {review}
+
+Consider the following aspects in your analysis:
+1. Long-term Sustainability
+   - Future scalability
+   - Maintenance requirements
+   - Evolution potential
+
+2. Strategic Alignment
+   - Business goals alignment
+   - Industry trends compatibility
+   - Competitive advantage
+
+3. Resource Optimization
+   - Cost efficiency
+   - Resource utilization
+   - Performance optimization
+
+Please structure your in-depth analysis in the following JSON format:
+{
+    "deep_thought": {
+        "sustainability_analysis": "Long-term viability assessment",
+        "strategic_implications": "Strategic impact analysis",
+        "optimization_opportunities": "Efficiency recommendations",
+        "critical_insights": "Key findings and observations",
+        "future_considerations": "Forward-looking recommendations"
+    }
+}""",
+        "variables": ["review"]
+    },
+
+    "step4": {
+        "template": """Based on the comprehensive analysis provided:
+
+Analysis Details: {deepen_thought_process}
+
+Develop a prioritized ranking of solutions considering:
+1. Overall Impact
+   - Business value
+   - Technical feasibility
+   - Resource efficiency
+
+2. Implementation Viability
+   - Time to market
+   - Resource availability
+   - Technical readiness
+
+3. Risk-Reward Balance
+   - Risk level
+   - Potential benefits
+   - Mitigation capability
+
+Please present your rankings in the following JSON format:
+{
+    "ranked_solutions": {
+        "rankings": [
+            {
+                "rank": "position",
+                "solution": "solution name",
+                "justification": "detailed reasoning",
+                "implementation_priority": "high/medium/low",
+                "key_advantages": ["advantage1", "advantage2"],
+                "considerations": "important notes"
+            }
+            // ... repeat for all solutions
+        ],
+        "summary": "Overall recommendation and next steps",
+        "implementation_roadmap": "Suggested implementation sequence"
+    }
+}""",
+        "variables": ["deepen_thought_process"]
+    }
+}

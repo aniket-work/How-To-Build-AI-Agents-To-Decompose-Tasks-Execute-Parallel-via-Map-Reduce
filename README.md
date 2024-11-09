@@ -90,7 +90,7 @@ Follow these steps to set up and run the  Built Social Media Content Moderation 
    ```bash 
      
       # Run 
-      streamlit run main.py
+      streamlit run streamlit_app.py
       
    ```
 
